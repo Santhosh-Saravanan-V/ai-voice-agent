@@ -10,9 +10,6 @@ import {
 } from "@clerk/clerk-react";
 import VoiceInput from "../components/VoiceInput";
 
-const SHARED_API_KEY =
-  "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";
-
 export default function Index() {
   const { user } = useUser();
   const [messages, setMessages] = useState<{ sender: string; text: string }[]>(
