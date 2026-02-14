@@ -1,18 +1,25 @@
-import '../styles/globals.css'; // if your global styles are in styles/globals.css
-import Navbar from '../components/Navbar';
-
+// app/// app/layout.tsx
+import { ClerkProvider } from '@clerk/nextjs';
+import './globals.css';
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
 export const metadata = {
-  title: 'AI Voice Agent for Education',
-  description: 'An intelligent voice assistant for students',
+  title: 'AI ChatBot',
+  description: 'Chat with AI using voice and text',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <main className="p-6 bg-gray-100 min-h-screen">{children}</main>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <head>
+          <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
+        </head>
+        
+        <body className="font-orbitron">{children}</body>
+      </html>
+    </ClerkProvider>
   );
 }
+
+
+
